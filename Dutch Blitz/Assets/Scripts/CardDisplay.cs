@@ -6,18 +6,21 @@ using UnityEngine.UI;
 public class CardDisplay : MonoBehaviour
 {
     public Card card;
-
     public Text valueText;
     public Image genderImage;
-    public Color colorDisplay;
+    public Image colorDisplay;
 
     // Start is called before the first frame update
     void Start()
     {
-        genderImage.sprite = card.gender;
+        genderImage.sprite = card.genderDisplay;
         valueText.text = card.cardValue.ToString();
-        colorDisplay = card.colorDisplay;
+        colorDisplay.color = card.colorDisplay;
+    }
 
+    void RefreshCardDisplay()
+    {
+        //TODO: add in same values above here for reset
     }
 
 }

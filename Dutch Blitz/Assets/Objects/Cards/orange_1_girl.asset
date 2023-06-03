@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2850fe3f4651ba845b2eb8d19f199c67, type: 3}
-  m_Name: yellow_one_boy
+  m_Name: orange_1_girl
   m_EditorClassIdentifier: 
   cardValue: 1
-  colorData: yellow
-  gender: {fileID: 21300000, guid: a79d6bfb819acb04eabb51f7c5b9c51e, type: 3}
-  colorDisplay: {r: 1, g: 0.78938746, b: 0, a: 0}
+  genderDisplay: {fileID: 21300000, guid: 06669bf6c742a69428c10e4b2c817da0, type: 3}
+  colorDisplay: {r: 0.6037736, g: 0, b: 0.30783772, a: 1}

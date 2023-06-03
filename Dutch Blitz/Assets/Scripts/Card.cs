@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Card : ScriptableObject
 {
     public int cardValue;
-    public string colorData;
-
-    public Sprite gender;
+    public Sprite genderDisplay;
     public Color colorDisplay;
+
+    //public Vector3[] spawnPoints;
     
    
 }
