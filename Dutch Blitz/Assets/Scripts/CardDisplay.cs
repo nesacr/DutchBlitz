@@ -13,14 +13,14 @@ public class CardDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RefreshCardDisplay();
+    }
+
+    public void RefreshCardDisplay()
+    {
         genderImage.sprite = card.genderDisplay;
         valueText.text = card.cardValue.ToString();
         colorDisplay.color = card.colorDisplay;
-    }
-
-    void RefreshCardDisplay()
-    {
-        //TODO: add in same values above here for reset
     }
 
 }
