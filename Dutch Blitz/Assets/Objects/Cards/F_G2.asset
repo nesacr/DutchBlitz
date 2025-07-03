@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardValue: 2
   genderDisplay: {fileID: 21300000, guid: 06669bf6c742a69428c10e4b2c817da0, type: 3}
-  colorDisplay: {r: 0, g: 0.3764706, b: 0.3019608, a: 1}
+  colour: 1
