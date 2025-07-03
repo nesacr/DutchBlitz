@@ -8,7 +8,7 @@ public class Card : ScriptableObject
 {
     public int cardValue;
     public Sprite genderDisplay;
-    public Color colorDisplay;
+    public CardColour colour;
 
     //public Vector3[] spawnPoints;
     

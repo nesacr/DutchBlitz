@@ -724,9 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 11400000, guid: 79cdcc3deeb486b49bd60ffad8e85e25, type: 2}
-  playerDeck:
-  - {fileID: 11400000, guid: dceb35aa8ae47aa48ad1930896eed17e, type: 2}
-  - {fileID: 11400000, guid: 485fe1a35aede0f47bca7f1fd27584ee, type: 2}
+  playerDeck: []
   blitzGO: {fileID: 0}
   slotOneGO: {fileID: 0}
   slotTwoGO: {fileID: 0}
@@ -869,7 +867,7 @@ MonoBehaviour:
   card: {fileID: 11400000, guid: 2bd661026f3c6214ea2d4aec755f7077, type: 2}
   valueText: {fileID: 1324668411}
   genderImage: {fileID: 1453145868}
-  colorDisplay: {fileID: 61580700}
+  colorDisplay: {fileID: 1002998932}
 --- !u!222 &1403895939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1234,7 +1232,7 @@ MonoBehaviour:
   card: {fileID: 11400000, guid: c3a471fa60e3da34183541254ba53d0e, type: 2}
   valueText: {fileID: 1826960586}
   genderImage: {fileID: 145096850}
-  colorDisplay: {fileID: 1723503231}
+  colorDisplay: {fileID: 1002998932}
 --- !u!222 &1814649829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1474,7 +1472,7 @@ MonoBehaviour:
   card: {fileID: 11400000, guid: dceb35aa8ae47aa48ad1930896eed17e, type: 2}
   valueText: {fileID: 2219509346010626513}
   genderImage: {fileID: 2219509346363530620}
-  colorDisplay: {fileID: 2219509346333575344}
+  colorDisplay: {fileID: 1002998932}
 --- !u!224 &2219509346010626512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2006,7 +2004,7 @@ MonoBehaviour:
   card: {fileID: 11400000, guid: 2e471fd7a7736734f9137463d632149a, type: 2}
   valueText: {fileID: 4685651816166885263}
   genderImage: {fileID: 3592055217328539763}
-  colorDisplay: {fileID: 5400353979001774171}
+  colorDisplay: {fileID: 1002998932}
 --- !u!222 &6252550262166756712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2372,7 +2370,7 @@ MonoBehaviour:
   card: {fileID: 11400000, guid: ec693cc72e9c6294990bd120de6e56a8, type: 2}
   valueText: {fileID: 8102768785848735941}
   genderImage: {fileID: 8102768786166529128}
-  colorDisplay: {fileID: 8102768786138147236}
+  colorDisplay: {fileID: 1002998932}
 --- !u!1 &8102768786622865838
 GameObject:
   m_ObjectHideFlags: 0
