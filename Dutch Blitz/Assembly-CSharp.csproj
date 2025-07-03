@@ -64,11 +64,11 @@
     <Compile Include="Assets\Scripts\CardDisplay.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\UseCards.cs" />
+    <Compile Include="Assets\Scripts\ColourDatabase.cs" />
     <Compile Include="Assets\Scripts\CameraBehaviour.cs" />
+    <Compile Include="Assets\Scripts\GameEnums.cs" />
     <Compile Include="Assets\TapCard.cs" />
     <Compile Include="Assets\Scripts\Card.cs" />
-    <Compile Include="Assets\Scripts\GameEnums.cs" />
-    <Compile Include="Assets\Scripts\ColourDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Colorblind Effect\Documentation\ReadMe.txt" />
