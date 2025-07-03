@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|c:\\users\\ness\\desktop\\dutchblitz\\dutch blitz\\assets\\scripts\\gameenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|c:\\users\\ness\\desktop\\dutchblitz\\dutch blitz\\assets\\scripts\\carddisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carddisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|c:\\users\\ness\\desktop\\dutchblitz\\dutch blitz\\assets\\scripts\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\assets\\scripts\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|c:\\users\\ness\\desktop\\dutchblitz\\dutch blitz\\assets\\scripts\\colourdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\colourdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|c:\\users\\ness\\desktop\\dutchblitz\\dutch blitz\\assets\\scripts\\gameenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3D2FED6-D95C-AA9E-6294-3467FA6B050C}|Assembly-CSharp.csproj|C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,19 +39,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CardDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\CardDisplay.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardDisplay.cs",
+              "ToolTip": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\CardDisplay.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardDisplay.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T21:42:31.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ColourDatabase.cs",
+              "DocumentMoniker": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\ColourDatabase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ColourDatabase.cs",
+              "ToolTip": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\ColourDatabase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ColourDatabase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T21:33:43.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GameEnums.cs",
               "DocumentMoniker": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\GameEnums.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameEnums.cs",
               "ToolTip": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\GameEnums.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameEnums.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T21:28:37.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
@@ -61,14 +95,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Card.cs",
               "ToolTip": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\Card.cs",
               "RelativeToolTip": "Assets\\Scripts\\Card.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T21:24:27.274Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Ness\\Desktop\\DutchBlitz\\Dutch Blitz\\Assets\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
