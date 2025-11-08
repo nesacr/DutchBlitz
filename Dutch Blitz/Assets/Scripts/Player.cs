@@ -7,6 +7,13 @@ using UnityEditor;
 
 public class Player : MonoBehaviour
 {
+    public GameObject cardPrefab;
+    public Transform blitzPileZone;
+    public Transform slotOnePileZone;
+    public Transform slotTwoPileZone;
+    public Transform slotThreePileZone;
+    public Transform woodPileZone;
+
     public Deck deck;
     public List<Card> playerDeck;
     public Dictionary<GameObject, Stack<Card>> stacks;
@@ -22,6 +29,8 @@ public class Player : MonoBehaviour
     public GameObject slotTwoGO;
     public GameObject slotThreeGO;
     public GameObject woodGO;
+
+    public float cardOffset = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -86,46 +95,60 @@ public class Player : MonoBehaviour
    
     void DealCards()
     {
-        //Stack 1 - deal 10 cards to blitz pile
-        for(int i = 0; i < 10; i++)
+        for (int i =0; i < 10; i++)
         {
-            //add card from front of deck to blitz pile
-            stacks[blitzGO].Push(playerDeck[0]);
-
-            //remove card from deck
-            playerDeck.RemoveAt(0);
+            CreateCardFromPlayerDeck(blitzPile, blitzPileZone, cardOffset);
         }
 
-        stacks[slotOneGO].Push(playerDeck[0]);
-        playerDeck.RemoveAt(0);
-        stacks[slotTwoGO].Push(playerDeck[0]);
-        playerDeck.RemoveAt(0);
-        stacks[slotThreeGO].Push(playerDeck[0]);
-        playerDeck.RemoveAt(0);
+        // deal to Slot Piles
+        CreateCardFromPlayerDeck(slotOnePile, slotOnePileZone);
+        CreateCardFromPlayerDeck(slotTwoPile, slotTwoPileZone);
+        CreateCardFromPlayerDeck(slotThreePile, slotThreePileZone);
 
-        // Stack 4 - deal remainder of deck to wood pile stack
-        while (playerDeck.Count > 0)
+        // deal remainder of cards to wood pile stack
+        while(playerDeck.Count > 0)
         {
-            //playerStacks[3].Push(playerDeck[0]);
-            stacks[woodGO].Push(playerDeck[0]);
-            playerDeck.RemoveAt(0);
+            CreateCardFromPlayerDeck(woodPile, woodPileZone, cardOffset);
         }
     }
 
-    void ChangeCardDisplay(GameObject cardGO)
+    void CreateCardFromPlayerDeck(Stack<Card> stack, Transform spawnPoint, float offset = 0.0f)
+    {
+        // take the top card from player deck
+        Card topCard = playerDeck[0];
+        playerDeck.RemoveAt(0);
+
+        // Add to pile stack
+        stack.Push(topCard);
+      
+        // Instantiate prefab at pile anchor
+        GameObject cardGO = Instantiate(cardPrefab, spawnPoint);
+
+        // Update display to match the card
+        CardDisplay display = cardGO.GetComponent<CardDisplay>();
+        if(display != null)
+        {
+            display.card = topCard;
+            display.RefreshCardDisplay();
+        }
+
+        cardGO.transform.localPosition = new Vector3(offset * (stack.Count - 1), offset * (stack.Count - 1), 0);
+    }
+
+    void ChangeCardDisplay(GameObject cardPile)
     {
         //cardGO.GetComponent<CardDisplay>().card;
         // make sure card has something to disply if stack isn't empty
-        if(stacks[cardGO].TryPeek(out Card currentCard))
+        if(stacks[cardPile].TryPeek(out Card currentCard))
         {
-            Debug.Log($"Changing card display for: {cardGO} to {currentCard}");
-            cardGO.GetComponent<CardDisplay>().card = currentCard;
-            cardGO.GetComponent<CardDisplay>().RefreshCardDisplay();
+            Debug.Log($"Changing card display for: {cardPile} to {currentCard}");
+            cardPile.GetComponent<CardDisplay>().card = currentCard;
+            cardPile.GetComponent<CardDisplay>().RefreshCardDisplay();
         }
 
         else
         {
-            cardGO.SetActive(false);
+            cardPile.SetActive(false);
         }
     }
 
@@ -135,6 +158,17 @@ public class Player : MonoBehaviour
         {
             //Debug.Log($"Changing card display for: {key} to {cardStacks[key].Peek()}");
             ChangeCardDisplay(key);
+        }
+    }
+
+    public void OnCardSelected(GameObject cardGO)
+    {
+        if(stacks.ContainsKey(cardGO))
+        {
+            if (stacks[cardGO].TryPeek(out Card topCard))
+            {
+                Debug.Log($"Selected from {cardGO.name}, top card: {topCard.cardValue}");
+            }
         }
     }
 
