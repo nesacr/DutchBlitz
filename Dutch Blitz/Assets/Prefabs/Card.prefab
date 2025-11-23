@@ -421,9 +421,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4914936777591416424}
   - component: {fileID: 4914936777591416430}
+  - component: {fileID: 5092548391886512612}
   - component: {fileID: 4914936777591416429}
   - component: {fileID: 5288787222950028227}
-  - component: {fileID: 5092548391886512612}
   - component: {fileID: 4889530056584848608}
   m_Layer: 5
   m_Name: Card
@@ -464,6 +464,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4914936777591416425}
   m_CullTransparentMesh: 1
+--- !u!114 &5092548391886512612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914936777591416425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cd0189aa1976042a35f6ad8ec3ab10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardColor: {fileID: 4914936777240915565}
+  outline: {fileID: 0}
+  cardDisplay: {fileID: 4914936777591416429}
 --- !u!114 &4914936777591416429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +495,7 @@ MonoBehaviour:
   valueText: {fileID: 4914936777018613506}
   genderImage: {fileID: 4914936777200221103}
   colorDisplay: {fileID: 4914936777240915555}
+  artworkGO: {fileID: 4914936775847252395}
 --- !u!61 &5288787222950028227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -525,20 +541,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5092548391886512612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4914936777591416425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42cd0189aa1976042a35f6ad8ec3ab10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardColor: {fileID: 4914936777240915565}
-  outline: {fileID: 0}
 --- !u!114 &4889530056584848608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +577,22 @@ MonoBehaviour:
         - m_Target: {fileID: 5092548391886512612}
           m_TargetAssemblyTypeName: CardSelector, Assembly-CSharp
           m_MethodName: unHighlightCard
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5092548391886512612}
+          m_TargetAssemblyTypeName: CardSelector, Assembly-CSharp
+          m_MethodName: OnMouseClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
