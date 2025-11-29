@@ -8,8 +8,12 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
+    public Vector3 selectedScaleAmount = new Vector3(1.1f, 1.1f, 1f);
+
     private GameObject selectedCardGO;
     private Outline selectedCardOutline;
+    private Vector3 originalCardScale;
+    public bool bCardSelected = false;
 
     private void Awake()
     {
@@ -20,28 +24,45 @@ public class PlayerManager : MonoBehaviour
     {
         selectedCardGO = cardGO;
         selectedCardOutline = cardGO.GetComponentInChildren<Outline>();
-        cardGO.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
-        Debug.Log("Card Selected: " + cardGO.name);
+        originalCardScale = selectedCardGO.transform.localScale;
+        selectedCardGO.transform.localScale = selectedScaleAmount;
+        bCardSelected = true;
     }
 
     public void PlacingCard(GameObject cardGO)
     {
-
-        // if card is untagged, tag it as player
-        //if (cardGO.tag == "Untagged")
-        //{
-        //    cardGO.tag = "Player";
-        //}
-        //TODO: check the parent tag instead of the card tag itself
-
         Player.Instance.RemoveCardFromPile(cardGO);
 
-        if(selectedCardOutline != null)
+        DeselectCard(cardGO);
+    }
+    public void DeselectCard(GameObject cardGO = null)
+    {
+        GameObject go = cardGO ?? selectedCardGO;
+
+        if (selectedCardOutline != null)
         {
+
+            if (cardGO)
+            {
+                cardGO.transform.localScale = originalCardScale;
+            }
+            else if(go)
+            {
+                go.transform.localScale = originalCardScale;
+            }
             selectedCardOutline.enabled = false;
-            selectedCardOutline.transform.localScale = new Vector3(1f, 1f, 1f);
-            cardGO.transform.localScale = new Vector3(1f, 1f, 1f);
-        }       
-        
+            selectedCardOutline.transform.localScale = originalCardScale;
+        }
+
+        var cardColor = go.GetComponent<CardSelector>();
+        if (cardColor != null && cardColor.cardColor != null)
+        {
+            cardColor.cardColor.transform.localScale = originalCardScale;
+        }
+
+        bCardSelected = false;
+        selectedCardGO = null;
+        selectedCardOutline = null;
     }
 }
+

@@ -41,16 +41,31 @@ public class CardSelector : MonoBehaviour
 
     public void OnMouseClick()
     {
-        outline.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
-        PlayerManager.Instance.SelectCard(gameObject);
-        if(IsStartingCard(cardDisplay))
+        Debug.Log("Card clicked tag: " + gameObject.tag);
+
+        // if card isn't already selected, then highlight and select it
+        if (!PlayerManager.Instance.bCardSelected)
         {
-            PileManager.Instance.AutoPlaceStartingCard(cardDisplay);
+            highlightCard();
+            outline.transform.localScale = PlayerManager.Instance.selectedScaleAmount;
+            PlayerManager.Instance.SelectCard(gameObject);
+            if(IsStartingCard(cardDisplay))
+            {
+                PlayerManager.Instance.PlacingCard(gameObject);
 
-            PlayerManager.Instance.PlacingCard(gameObject);
+                PileManager.Instance.AutoPlaceStartingCard(cardDisplay);
+
+                outline.transform.localScale = new Vector3(1f, 1f, 1f);
+                unHighlightCard();
+            }
+
         }
+        else
+        {
+            // check if selected card can be placed on this card
+        }
+        
 
-        outline.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     public bool IsStartingCard(CardDisplay card)

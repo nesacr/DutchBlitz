@@ -116,25 +116,25 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            CreateCardFromPlayerDeck(blitzPile, blitzPileZone, cardOffset);
+            CreateCardFromPlayerDeck(blitzPile, blitzPileZone, "", cardOffset);
         }
 
         // deal to Slot Piles
-        CreateCardFromPlayerDeck(slotOnePile, slotOnePileZone);
-        CreateCardFromPlayerDeck(slotTwoPile, slotTwoPileZone);
-        CreateCardFromPlayerDeck(slotThreePile, slotThreePileZone);
+        CreateCardFromPlayerDeck(slotOnePile, slotOnePileZone, "PostPile");
+        CreateCardFromPlayerDeck(slotTwoPile, slotTwoPileZone, "PostPile");
+        CreateCardFromPlayerDeck(slotThreePile, slotThreePileZone, "PostPile");
 
         // deal remainder of cards to wood pile stack
         while (playerDeck.Count > 0)
         {
-            CreateCardFromPlayerDeck(woodPile, woodPileZone, cardOffset);
+            CreateCardFromPlayerDeck(woodPile, woodPileZone, "", cardOffset);
         }
 
         UpdatePileCountTexts();
     }
 
 
-    void CreateCardFromPlayerDeck(Stack<Card> stack, Transform spawnPoint, float offset = 0.0f)
+    void CreateCardFromPlayerDeck(Stack<Card> stack, Transform spawnPoint, string tagName = "", float offset = 0.0f)
     {
         // take the top card from player deck
         Card topCard = playerDeck[0];
@@ -155,6 +155,11 @@ public class Player : MonoBehaviour
         }
 
         cardGO.transform.localPosition = new Vector3(offset * (stack.Count - 1), offset * (stack.Count - 1), 0);
+
+        if(tagName != "")
+        {
+            cardGO.tag = tagName;
+        }
     }
 
     void ChangeCardDisplay(GameObject cardPile)
@@ -207,14 +212,16 @@ public class Player : MonoBehaviour
             pileStack.Pop();
             UpdatePileCountTexts();
 
+            // Always refresh the pile anchor display so the visible top matches the logical top
+            ChangeCardDisplay(parentGO);
+
+            // If the pile became empty, run post-empty logic (e.g. refill from blitz)
             if (pileStack.Count == 0)
             {
-                ChangeCardDisplay(parentGO);
-
                 if(parentGO.tag == ("PostPile") && blitzPile.Count > 0)
                 {
-                    // TODO : add function here to auto move card from Blitz Pile to empty Post Pile
-                    AutoMoveBlitzToPost(parentGO);
+                   // auto move top card from blitz to the empty Post pile
+                   AutoMoveBlitzToPost(parentGO);
                 }
             }
         }
@@ -222,7 +229,7 @@ public class Player : MonoBehaviour
 
     public void AutoMoveBlitzToPost(GameObject postPileGO)
     {
-        if(postPileGO == null || blitzPile == null || blitzPile.Count == 0)
+        if (postPileGO == null || blitzPile == null || blitzPile.Count == 0)
         {
             Debug.LogWarning("Attempting to move cards from blitz pile to post pile, but GO is null or empty.");
             return;
@@ -233,13 +240,13 @@ public class Player : MonoBehaviour
 
         GameObject movedGO = null;
 
-        if(blitzGO != null && blitzGO.transform.childCount > 0)
+        if (blitzGO != null && blitzGO.transform.childCount > 0)
         {
-           Transform topChild = blitzGO.transform.GetChild(blitzGO.transform.childCount - 1);
+            Transform topChild = blitzGO.transform.GetChild(blitzGO.transform.childCount - 1);
             movedGO = topChild.gameObject;
 
             var cd = movedGO.GetComponent<CardDisplay>();
-            if(cd != null)
+            if (cd != null)
             {
                 cd.card = cardToMove;
                 cd.RefreshCardDisplay();
@@ -267,7 +274,7 @@ public class Player : MonoBehaviour
         int count = 3;
         int size = woodPile.Count;
 
-        if(count >= size)
+        if (count >= size)
         {
             //TODO: maybe add logic here in the future to reshuffle the wood pile back into the deck
             return; // nothing to cycle
@@ -280,7 +287,7 @@ public class Player : MonoBehaviour
 
         // rebuild woodPile stack to match newOrder
         woodPile.Clear();
-        for(int i = newOrder.Count - 1; i >= 0; i--)
+        for (int i = newOrder.Count - 1; i >= 0; i--)
         {
             woodPile.Push(newOrder[i]);
         }

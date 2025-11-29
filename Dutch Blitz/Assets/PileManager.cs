@@ -39,6 +39,16 @@ public class PileManager : MonoBehaviour
             return;
         }
 
+        //// Remove the card from its source stack so the logical data matches the visual move
+        //if (Player.Instance != null)
+        //{
+        //    Player.Instance.RemoveCardFromPile(card.gameObject);
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("Player.Instance is null; will still attempt to place visually.");
+        //}
+
         // set temp values
         GameObject closestPile = null;
         float closestDistance = float.MaxValue;
@@ -63,7 +73,8 @@ public class PileManager : MonoBehaviour
         if (closestPile != null)
         {
             Debug.Log($"Placing card {card.card} on pile {closestPile.name}");
-            // place card on closest pile
+            // place card on closest pile (visual)
+            card.transform.SetParent(closestPile.transform, worldPositionStays: true);
             card.transform.position = closestPile.transform.position + new Vector3(0, 0.1f, 0); // slight offset in y to avoid z-fighting
             centerPiles[closestPile] = true; // mark pile as occupied
         }
@@ -71,5 +82,8 @@ public class PileManager : MonoBehaviour
         {
             Debug.LogWarning("No available piles to place the card.");
         }
+
+        // Add CenterPile tag to the card
+        card.gameObject.tag = "CenterPile";
     }
 }

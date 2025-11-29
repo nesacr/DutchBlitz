@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CardDisplay.cs" />
     <Compile Include="Assets\Scripts\CardSelector.cs" />
+    <Compile Include="Assets\BackgroundSelector.cs" />
     <Compile Include="Assets\Scripts\ColourDatabase.cs" />
     <Compile Include="Assets\CardInteraction.cs" />
     <Compile Include="Assets\Scripts\CameraBehaviour.cs" />
